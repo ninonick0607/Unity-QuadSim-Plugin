@@ -1,0 +1,15 @@
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Unity local/cache
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
