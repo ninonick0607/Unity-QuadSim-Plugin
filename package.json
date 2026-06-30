@@ -2,16 +2,29 @@
   "name": "com.nino.quadsim",
   "version": "0.1.0",
   "displayName": "QuadSim",
-  "description": "A deterministic Unity quadrotor simulation framework with sensors, controllers, external RPC control, and Python SDK integration.",
+  "description": "Deterministic Unity quadrotor simulation package with sensors, control allocation, RPC, Python SDK integration, and PX4 SITL tooling.",
   "unity": "6000.0",
   "author": {
     "name": "Nicolas Nino"
   },
+  "documentationUrl": "https://github.com/ninonick0607/Unity-QuadSim-Plugin/blob/main/README.md",
+  "changelogUrl": "https://github.com/ninonick0607/Unity-QuadSim-Plugin/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/ninonick0607/Unity-QuadSim-Plugin/blob/main/LICENSE.md",
   "samples": [
     {
-      "displayName": "Basic QuadSim Scene",
-      "description": "Minimal scene with SimRoot, DroneManager, one quadrotor prefab, and RPC enabled.",
-      "path": "Samples~/Basic QuadSim Scene"
+      "displayName": "QuadSim Scene",
+      "description": "QuadSim sample scene, default environment, scene config, prefabs, and demo assets.",
+      "path": "Samples~/QuadSim Scene"
+    },
+    {
+      "displayName": "PX4 SITL Tools",
+      "description": "PX4 bridge, validation scripts, requirements, and setup documentation.",
+      "path": "Samples~/PX4 SITL Tools"
+    },
+    {
+      "displayName": "Headless Tools",
+      "description": "Standalone headless visualization and utility tools.",
+      "path": "Samples~/Headless Tools"
     }
   ]
 }
