@@ -1,0 +1,17 @@
+{
+  "name": "com.nino.quadsim",
+  "version": "0.1.0",
+  "displayName": "QuadSim",
+  "description": "A deterministic Unity quadrotor simulation framework with sensors, controllers, external RPC control, and Python SDK integration.",
+  "unity": "6000.0",
+  "author": {
+    "name": "Nicolas Nino"
+  },
+  "samples": [
+    {
+      "displayName": "Basic QuadSim Scene",
+      "description": "Minimal scene with SimRoot, DroneManager, one quadrotor prefab, and RPC enabled.",
+      "path": "Samples~/Basic QuadSim Scene"
+    }
+  ]
+}

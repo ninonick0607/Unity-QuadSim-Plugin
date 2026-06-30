@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3589958785238508409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5041832275845641998}
+  - component: {fileID: 6615807386293998892}
+  - component: {fileID: -343744523309438113}
+  - component: {fileID: 7671760328521991184}
+  - component: {fileID: 3517857633211225954}
+  m_Layer: 0
+  m_Name: SimRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5041832275845641998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589958785238508409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.09232, y: -1, z: 47.03517}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6615807386293998892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589958785238508409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16cb25956d3b4704aa5895ad06b796a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuadSim.SimCore.SimulationManager
+  baseHz: 250
+  runMode: 1
+  timeScale: 1
+  maxStepsPerFrame: 1000
+  startPaused: 0
+  logEffectiveHz: 0
+  logIntervalSeconds: 1
+--- !u!114 &-343744523309438113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589958785238508409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cc73f361ec43ceb5698b369567ff37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimCore.Rpc.ExternalRpcAdapter
+  commandPort: 5555
+  telemetryPort: 5556
+  autoStart: 1
+  heartbeatTimeoutSec: 5
+  maxRequestsPerFrame: 10
+  defaultPublishHz: 50
+--- !u!114 &7671760328521991184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589958785238508409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eca1a18f6e4731a9a8a3973fbe4e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DroneCore.Core.DroneManager
+  quadPawnPrefab: {fileID: -6611264674519159391, guid: 73493b039b7aa328aac6841c1086dcf9, type: 3}
+  defaultSpawnOrigin: {x: 0, y: 1, z: 0}
+  spawnOffset: 1.5
+  selectedConfigName: StandardDrone_Config
+  simManager: {fileID: 6615807386293998892}
+  swarmMode: 0
+--- !u!114 &3517857633211225954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589958785238508409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db38ead64624f68971ebc04188268a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimCore.ControlAuthorityManager
+  defaultSource: 0
+  connectionTimeoutSec: 60
+  autoAcceptWhenDefault: 1
