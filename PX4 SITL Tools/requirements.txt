@@ -1,4 +1,0 @@
-pymavlink
-numpy
-matplotlib
-quadsim-sdk
