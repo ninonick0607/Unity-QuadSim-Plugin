@@ -36,7 +36,7 @@ quadsim-sdk / QuadSimLib   ← Python interface, high-level flight, raw modes, l
 Use this README to install and run the Unity simulator. Use the Python SDK docs for detailed control-mode usage.
 
 - Python SDK repo: [github.com/ninonick0607/QuadSimLib](https://github.com/ninonick0607/QuadSimLib)
-- Detailed Python control modes: [QuadSimLib/docs/control_modes.md](https://github.com/ninonick0607/QuadSimLib/docs/control_modes.md)
+- Detailed Python control modes: [QuadSimLib/docs/control_modes.md](https://github.com/ninonick0607/QuadSimLib/blob/master/docs/control_modes.md)
 
 ---
 
