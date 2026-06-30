@@ -1,0 +1,171 @@
+/* Scope everything to the top bar root to avoid leaking styles */
+.topbar-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 46px;
+
+    background-color: rgba(18,18,18,0.78);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(255,255,255,0.10);
+
+    padding-left: 12px;
+    padding-right: 12px;
+
+    justify-content: center;
+}
+
+/* Ensure these containers actually lay out horizontally */
+.topbar-root .row {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Center group spans full width, content centered */
+.topbar-root .topbar-center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* Left group pinned */
+.topbar-root .topbar-left {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+
+    align-items: center;
+}
+
+/* Right group pinned */
+.topbar-root .topbar-right {
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+
+    align-items: center;
+}
+
+/* ------------------------------------------------------------------ */
+/* Unity replacement for gap: apply margin-right to children           */
+/* NOTE: No :last-child in Unity 6.3, so trailing margin is OK.        */
+/* ------------------------------------------------------------------ */
+
+.topbar-root .topbar-center > * { margin-right: 8px; }
+.topbar-root .topbar-left   > * { margin-right: 8px; }
+.topbar-root .topbar-right  > * { margin-right: 8px; }
+
+/* Pill internal spacing (x + value) */
+.topbar-root .topbar-pill > * { margin-right: 4px; }
+
+/* Divider (vdiv) already defines its own margins */
+.topbar-root .topbar-vdiv {
+    width: 1px;
+    height: 22px;
+    background-color: rgba(255,255,255,0.12);
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+/* Buttons (topbar-specific sizing) */
+.topbar-root .topbar-btn {
+    height: 30px;
+    min-width: 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-size: 12px;
+    -unity-font-style: bold;
+}
+
+/* Primary button (PAUSE) */
+.topbar-root .topbar-btn-primary {
+    background-color: rgba(60,130,255,0.75);
+    color: rgba(7,16,33,1.0);
+}
+
+/* Soft primary (Spawn) */
+.topbar-root .topbar-btn-primary-soft {
+    background-color: rgba(90,140,255,0.35);
+}
+
+/* Ghost (Settings) */
+.topbar-root .topbar-btn-ghost {
+    background-color: rgba(0,0,0,0.0);
+
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+
+    border-left-color: rgba(255,255,255,0.10);
+    border-right-color: rgba(255,255,255,0.10);
+    border-top-color: rgba(255,255,255,0.10);
+    border-bottom-color: rgba(255,255,255,0.10);
+}
+
+/* Pill (speed) */
+.topbar-root .topbar-pill {
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    border-radius: 999px;
+
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+
+    border-left-color: rgba(255,255,255,0.10);
+    border-right-color: rgba(255,255,255,0.10);
+    border-top-color: rgba(255,255,255,0.10);
+    border-bottom-color: rgba(255,255,255,0.10);
+
+    background-color: rgba(0,0,0,0.30);
+
+    align-items: center;
+}
+
+.topbar-root .topbar-pill-x {
+    font-size: 12px;
+    color: rgba(190,210,255,0.95);
+}
+
+.topbar-root .topbar-pill-speed {
+    font-size: 12px;
+    color: rgba(190,210,255,0.95);
+    -unity-font-style: bold;
+}
+
+/* Spawn dropdown styling */
+.topbar-root .topbar-select {
+    height: 30px;
+    min-width: 110px;
+
+    border-radius: 7px;
+
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+
+    border-left-color: rgba(255,255,255,0.12);
+    border-right-color: rgba(255,255,255,0.12);
+    border-top-color: rgba(255,255,255,0.12);
+    border-bottom-color: rgba(255,255,255,0.12);
+
+    background-color: rgba(0,0,0,0.28);
+    color: rgba(255,255,255,0.92);
+
+    padding-left: 10px;
+    padding-right: 10px;
+}

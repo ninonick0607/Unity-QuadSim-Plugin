@@ -1,0 +1,36 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="TopBarRoot" class="topbar-root qs-border">
+
+        <!-- CENTER (true centered, independent of left/right widths) -->
+        <ui:VisualElement class="topbar-center row">
+            <ui:Button name="BtnSlower" text="Slow" class="qs-btn topbar-btn" />
+            <ui:Button name="BtnPlayPause" text="PAUSE" class="qs-btn topbar-btn topbar-btn-primary" />
+            <ui:Button name="BtnStep" text="Step" class="qs-btn topbar-btn" />
+            <ui:Button name="BtnFaster" text=">>" class="qs-btn topbar-btn" />
+
+            <ui:VisualElement class="topbar-pill row">
+                <ui:Label text="x" class="topbar-pill-x" />
+                <ui:Label name="LblSpeed" text="1.00" class="topbar-pill-speed" />
+            </ui:VisualElement>
+
+            <ui:Button name="BtnReset" text="Reset" class="qs-btn topbar-btn" />
+        </ui:VisualElement>
+
+        <!-- LEFT -->
+        <ui:VisualElement class="topbar-left row">
+            <ui:Button name="BtnSettings" text="Settings" class="qs-btn topbar-btn topbar-btn-ghost" />
+        </ui:VisualElement>
+
+        <!-- RIGHT -->
+        <ui:VisualElement class="topbar-right row">
+            <ui:DropdownField name="SpawnDropdown" class="topbar-select" />
+            <ui:Button name="BtnSpawn" text="Spawn" class="qs-btn topbar-btn topbar-btn-primary-soft" />
+
+            <ui:VisualElement class="topbar-vdiv" />
+
+            <ui:Button name="BtnTelemetry" text="Telemetry" class="qs-btn topbar-btn" />
+            <ui:Button name="BtnInspector" text="Control" class="qs-btn topbar-btn" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2924411734271006579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3061468204304811011}
+  - component: {fileID: 895037266092347351}
+  - component: {fileID: 683703026782358437}
+  - component: {fileID: 7803781957945226173}
+  - component: {fileID: 5941148133095091895}
+  - component: {fileID: 6272794470432215185}
+  m_Layer: 5
+  m_Name: HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3061468204304811011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924411734271006579}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 206.70717, y: 0, z: 268.077}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &895037266092347351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924411734271006579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: 482a6db1997e24d7baee98b0dcdc298e, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 115da9af66566f6d5ab59e0ac1d24583, type: 3}
+  m_SortingOrder: 0
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &683703026782358437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924411734271006579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d677aa611954e9baa5b5148bd306768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuadSim.UI.SimHUDController
+  document: {fileID: 895037266092347351}
+  topBar: {fileID: 7803781957945226173}
+  telemetry: {fileID: 0}
+  control: {fileID: 0}
+--- !u!114 &7803781957945226173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924411734271006579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba12ba0d277a455aac7be3d809647b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuadSim.UI.SimTopBarController
+  sim: {fileID: 0}
+  droneSpawner: {fileID: 0}
+--- !u!114 &5941148133095091895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924411734271006579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedc60e5100044f1a55270ae3f71d6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuadSim.UI.TelemetryDeckController
+  hiddenClass: is-hidden
+  activeClass: active
+  initialDockThickness: 360
+  minWidth: 360
+  minHeight: 220
+  sensorManager: {fileID: 0}
+  cascadedController: {fileID: 0}
+  uiSampleHz: 30
+  graphWindowSec: 6
+--- !u!114 &6272794470432215185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924411734271006579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f70fe1fc3745f28373cc1e3220322b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuadSim.UI.ControlDeckController
+  cascadedController: {fileID: 0}
+  targetRigidbody: {fileID: 0}
+  commandProxy: {fileID: 0}
