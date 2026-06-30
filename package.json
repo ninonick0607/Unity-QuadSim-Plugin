@@ -1,6 +1,6 @@
 {
   "name": "com.nino.quadsim",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "QuadSim",
   "description": "Deterministic Unity quadrotor simulation package with sensors, control allocation, RPC, Python SDK integration, and PX4 SITL tooling.",
   "unity": "6000.0",
@@ -13,17 +13,17 @@
   "samples": [
     {
       "displayName": "QuadSim Scene",
-      "description": "QuadSim sample scene, default environment, scene config, prefabs, and demo assets.",
+      "description": "Importable QuadSim scenes that reference the base runtime maps, prefabs, drone assets, and scene config.",
       "path": "Samples~/QuadSim Scene"
     },
     {
       "displayName": "PX4 SITL Tools",
-      "description": "PX4 bridge, validation scripts, requirements, and setup documentation.",
+      "description": "PX4 bridge, confirmation script, offboard validation mission, requirements, and setup documentation.",
       "path": "Samples~/PX4 SITL Tools"
     },
     {
       "displayName": "Headless Tools",
-      "description": "Standalone headless visualization and utility tools.",
+      "description": "Standalone headless visualization and utility tools such as the live UDP viewer.",
       "path": "Samples~/Headless Tools"
     }
   ]
