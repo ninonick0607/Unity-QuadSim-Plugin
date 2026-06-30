@@ -1,0 +1,67 @@
+﻿# Drone Configuration File
+# Version: 1.0
+name: "Standard_Quad_V1"
+body_mesh: "/QuadSimPlugin/Assets/Drone_Models/QuadRotor1/Quadrotor1.Quadrotor1"
+
+physical_properties:
+  mass_kg: 1.28
+  com_offset: {x: 0.0, y: 0.0, z: 0.05} # Leave empty if not known
+  inertia: {x: 1.4e-5, y: 1.4e-5, z: 2.17e-5}  # Changed from ixx/iyy/izz to x/y/z (FVector)
+  arm_length: 0.1789 # 0.127  # Missing - FDroneParameters::Arm_Length
+  linear_drag_coef: 0.1
+  angular_drag_coef: 0.05
+
+propulsion:
+  # FRotorModel fields
+  prop_diameter: 0.127 #0.2286
+  max_rpm: 28000 #6396.667 #28000
+  max_thrust: 4.179446268 #8
+  thrust_coef: 0.11 #0.109919
+  torque_coef: 0.040164
+  # FRotorInstance array
+  # FIX THESE
+  propellers:
+    - {id: 0, x: 0.211, y: 0.0117, z: 0.211, dir: -1} # FL 
+    - {id: 1, x: 0.211, y: 0.0117, z: -0.211, dir: 1} # FR
+    - {id: 2, x: -0.211, y: 0.0117, z: 0.211, dir: 1} # BL
+    - {id: 3, x: -0.211, y: 0.0117, z: -0.211, dir: -1} # BR
+
+controller:
+  position_gains:
+    x: {p: 1.0, i: 0.0, d: 0.5}
+    y: {p: 1.0, i: 0.0, d: 0.5}
+    z: {p: 1.0, i: 0.1, d: 1.0}
+  
+  velocity_gains:
+    x: {p: 3.0, i: 0.01, d: 0.0001}
+    y: {p: 3.0, i: 0.01, d: 0.0001}
+    z: {p: 5.0, i: 0.0, d: 0.0}
+  
+  attitude_gains:
+    roll:  {p: 6.0, i: 0.0, d: 0.0}
+    pitch: {p: 6.0, i: 0.0, d: 0.0}
+    # Note: Add yaw att later on
+
+  rate_gains:
+    roll:  {p: 0.35, i: 0.02, d: 0.0001}
+    pitch: {p: 0.35, i: 0.02, d: 0.0001}
+    yaw:   {p: 1.0, i: 0.0, d: 0.0}
+
+camera_parameters:
+  Cam_Arm_Length: 2.5
+  FOV: 90
+  Cam_Pitch: -15.0
+  Cam_Socket_Offset:
+    x: -5.0
+    y: 0.0
+    z: 2.0
+    
+limits:
+  max_velocity_xy: 8.0
+  max_velocity_z: 10.0
+  max_tilt_angle_deg: 45.0
+  max_angular_rate_RP_deg: 45.0
+  max_angular_rate_Yaw_deg: 90.0
+  max_thrust_newtons: 7
+  max_pid_output: 700.0
+  acceptable_distance: 5
