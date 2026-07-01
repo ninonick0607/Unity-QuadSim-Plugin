@@ -2,17 +2,18 @@
   "name": "com.nino.quadsim",
   "version": "0.1.4",
   "displayName": "QuadSim",
-  "description": "Importable QuadSim scenes with sample maps, terrain assets, prefabs, drone assets, and scene config."  "unity": "6000.0",
+  "description": "Deterministic Unity quadrotor simulation package with sensors, control allocation, RPC, Python SDK integration, PX4 SITL tooling, and importable sample scenes.",
+  "unity": "6000.0",
   "author": {
     "name": "Nicolas Nino"
   },
-  "documentationUrl": "https://github.com/ninonick0607/Unity-QuadSim-Plugin/blob/main/README.md",
-  "changelogUrl": "https://github.com/ninonick0607/Unity-QuadSim-Plugin/blob/main/CHANGELOG.md",
-  "licensesUrl": "https://github.com/ninonick0607/Unity-QuadSim-Plugin/blob/main/LICENSE.md",
+  "documentationUrl": "https://github.com/ninonick0426/quadsim-unity-package/blob/main/README.md",
+  "changelogUrl": "https://github.com/ninonick0426/quadsim-unity-package/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/ninonick0426/quadsim-unity-package/blob/main/LICENSE.md",
   "samples": [
     {
       "displayName": "QuadSim Scene",
-      "description": "Importable QuadSim scenes that reference the base runtime maps, prefabs, drone assets, and scene config.",
+      "description": "Importable QuadSim scenes with sample maps, terrain assets, prefabs, drone assets, and scene config.",
       "path": "Samples~/QuadSim Scene"
     },
     {
