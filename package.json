@@ -2,7 +2,7 @@
   "name": "com.nino.quadsim",
   "version": "0.1.4",
   "displayName": "QuadSim",
-"description": "Importable QuadSim scenes with sample maps, terrain assets, prefabs, drone assets, and scene config."  "unity": "6000.0",
+  "description": "Importable QuadSim scenes with sample maps, terrain assets, prefabs, drone assets, and scene config."  "unity": "6000.0",
   "author": {
     "name": "Nicolas Nino"
   },
