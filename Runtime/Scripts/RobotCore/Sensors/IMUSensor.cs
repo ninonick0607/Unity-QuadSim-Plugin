@@ -54,15 +54,19 @@ namespace RobotCore.Sensors
         {
             if (rb == null)
             {
+                _rb = null;
+                _bodyTransform = null;
                 IsValid = false;
                 return;
             }
 
-            _prevVelWorld = rb.linearVelocity; // world m/s
+            _rb = rb;
+            _bodyTransform = rb.transform;
+
+            _prevVelWorld = rb.linearVelocity;
             _hasPrev = true;
             IsValid = true;
         }
-        
         public void SampleAngularVelocity(double nowSec, float deltaTime)
         {
             Vector3 wWorld = _rb.angularVelocity;

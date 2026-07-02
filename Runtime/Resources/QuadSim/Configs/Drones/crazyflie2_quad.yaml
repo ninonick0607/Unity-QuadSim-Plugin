@@ -1,41 +1,36 @@
-﻿# Drone Configuration File - Crazyflie 2.1
-# Version: 1.0
-# 1:1 match with Python CrazyflieParameters class
+# Drone Configuration File - Crazyflie 2.1
 name: "Crazyflie_Quad_V1"
 body_mesh: "/QuadSimPlugin/Assets/Drone_Models/CrazyFlie/cf2_assembly.cf2_assembly"
 
 physical_properties:
-  # Python: self.mass = 0.050 kg
-  mass_kg: 0.050
-  
+  # Genuine stock Crazyflie 2.1
+  mass_kg: 0.029
   com_offset: {x: 0.0, y: 0.0, z: 0.0}
-  
-  # Python: Jxx=1.43e-5, Jyy=1.43e-5, Jzz=2.89e-5 kg⋅m²
-  # NOTE: Your original had Jzz=2.17e-5, Python has 2.89e-5
-  inertia: {x: 1.43e-5, y: 1.43e-5, z: 2.89e-5}
-  
-  # Crazyflie arm length ~46mm diagonal, ~33mm per arm
-  arm_length: 0.033
-  
-  linear_drag_coef: 0.1
-  angular_drag_coef: 0.05
+
+  inertia: {x: 0.00001657, y: 0.00001666, z: 0.00002926}
+
+  # Center-to-motor radius from x/z offsets:
+  # sqrt(0.031^2 + 0.031^2) = 0.04384
+  arm_length: 0.04384
+
+  # Start low for a tiny drone; tune/identify later
+  linear_drag_coef: 0.02
+  angular_drag_coef: 0.001
 
 propulsion:
-  # Crazyflie 2.1 specs
-  prop_diameter: 0.045  # 45mm props
-  max_rpm: 21000        # Typical max for stock motors
-  max_thrust: 0.15      # TODO: Take out or make both idk # ~15g per motor = 0.15N (4 motors = 0.6N total)
-  thrust_coef: 0.24
-  torque_coef: 0.006
-  
-  # Propeller positions (Crazyflie is ~92mm diagonal)
-  # Using ~33mm arm length from center
-  propellers:
-    - {id: 0, x: 0.031, y: -0.031, z: 0.022, dir: -1}   # FL (CCW)
-    - {id: 1, x: 0.031, y: 0.031, z: 0.022, dir: 1}   # FR (CW)
-    - {id: 2, x: -0.031, y: -0.031, z: 0.022, dir: 1}   # BL (CW)
-    - {id: 3, x: -0.031, y: 0.031, z: 0.022, dir: -1} # BR (CCW)
+  prop_diameter: 0.045
+  max_rpm: 24000
+  max_thrust: 0.147
+  thrust_coef: 0.183
+  torque_coef: 0.0244
 
+  # QuadSim canonical order: 0=FL, 1=FR, 2=BL, 3=BR
+  # Unity body: +x forward, +y up, +z left
+  propellers:
+    - {id: 0, x:  0.031, y: 0.02125, z:  0.031, dir: 1}  # FL
+    - {id: 1, x:  0.031, y: 0.02125, z: -0.031, dir:  -1}  # FR
+    - {id: 2, x: -0.031, y: 0.02125, z:  0.031, dir:  -1}  # BL
+    - {id: 3, x: -0.031, y: 0.02125, z: -0.031, dir: 1}  # BR
 controller:
   # These PID gains are for the cascaded controller (QuadDroneController)
   # The Lee controller uses its own gains (Kx, Kv, KR, KOmega) which are hardcoded
@@ -56,9 +51,9 @@ controller:
     pitch: {p: 5.0, i: 0.0, d: 0.0}
 
   rate_gains:
-    roll:  {p: 0.0005, i: 0.0, d: 0.00001}
-    pitch: {p: 0.0005, i: 0.0, d: 0.00001}
-    yaw:   {p: 0.000075, i: 0.0, d: 0.0}
+    roll:  {p: 0.1, i: 0.0, d: 0.05}
+    pitch: {p: 0.1, i: 0.0, d: 0.05}
+    yaw:   {p: 0.1, i: 0.0, d: 0.0}
 
 camera_parameters:
   Cam_Arm_Length: 0.05
@@ -77,7 +72,7 @@ limits:
   # Python: self.max_thrust = 0.6 N (total from all 4 motors)
   max_thrust_newtons: 0.6
   
-  max_pid_output: 0.1
+  max_pid_output: 1.0
   altitude_threshold: 0.1
   min_altitude_local: 0.05
   

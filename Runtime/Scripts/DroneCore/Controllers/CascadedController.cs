@@ -190,6 +190,7 @@ namespace DroneCore.Controllers
 
             _maxAngleRateDeg = config.FlightParams.MaxRateRollPitch;
             _maxYawRateDeg = config.FlightParams.MaxRateYaw;
+            
             // Compute hover throttle from mass
             if (_body != null && _body.Rigidbody != null)
             {
