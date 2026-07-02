@@ -22,9 +22,9 @@
       "path": "Samples~/PX4 SITL Tools"
     },
     {
-      "displayName": "Headless Tools",
+      "displayName": "Headless-Tools",
       "description": "Standalone headless visualization and utility tools such as the live UDP viewer.",
-      "path": "Samples~/Headless Tools"
+      "path": "Samples~/Headless-Tools"
     }
   ]
 }

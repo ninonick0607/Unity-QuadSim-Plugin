@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac58421b6963eb5b78405541ac5fd441, type: 3}
   m_Name: Default_SceneConfig
   m_EditorClassIdentifier: Assembly-CSharp::SimCore.QuadSimSceneConfig
-  droneConfigName: crazyflie2_quad
+  droneConfigName: flightmare_quad
   commandPort: 5555
   telemetryPort: 5556
   originLatitudeDeg: 33.49414
@@ -20,6 +20,6 @@ MonoBehaviour:
   originAltitudeM: 5
   masterSeed: 12345
   enableSensorNoise: 0
-  windEnabled: 0
+  windEnabled: 1
   windSpeed: 10
   windHeadingDeg: 0

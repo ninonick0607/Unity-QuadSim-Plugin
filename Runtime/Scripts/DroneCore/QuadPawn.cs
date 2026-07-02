@@ -591,6 +591,7 @@ namespace DroneCore
 
                 float direction = spinDir[i];
                 float frameRotation = (rpm / 60f) * 360f * deltaTime * direction;
+
                 propellerMeshes[i].Rotate(0f, 0f, frameRotation, Space.Self);            }
         }
 

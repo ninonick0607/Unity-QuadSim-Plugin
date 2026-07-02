@@ -3,17 +3,10 @@ name: "Crazyflie_Quad_V1"
 body_mesh: "/QuadSimPlugin/Assets/Drone_Models/CrazyFlie/cf2_assembly.cf2_assembly"
 
 physical_properties:
-  # Genuine stock Crazyflie 2.1
-  mass_kg: 0.029
+  mass_kg: 0.05
   com_offset: {x: 0.0, y: 0.0, z: 0.0}
-
   inertia: {x: 0.00001657, y: 0.00001666, z: 0.00002926}
-
-  # Center-to-motor radius from x/z offsets:
-  # sqrt(0.031^2 + 0.031^2) = 0.04384
   arm_length: 0.04384
-
-  # Start low for a tiny drone; tune/identify later
   linear_drag_coef: 0.02
   angular_drag_coef: 0.001
 
@@ -27,10 +20,10 @@ propulsion:
   # QuadSim canonical order: 0=FL, 1=FR, 2=BL, 3=BR
   # Unity body: +x forward, +y up, +z left
   propellers:
-    - {id: 0, x:  0.031, y: 0.02125, z:  0.031, dir: 1}  # FL
-    - {id: 1, x:  0.031, y: 0.02125, z: -0.031, dir:  -1}  # FR
-    - {id: 2, x: -0.031, y: 0.02125, z:  0.031, dir:  -1}  # BL
-    - {id: 3, x: -0.031, y: 0.02125, z: -0.031, dir: 1}  # BR
+    - {id: 0, x:  0.031, y: 0.008, z:  0.031, dir: 1}  # FL
+    - {id: 1, x:  0.031, y: 0.008, z: -0.031, dir:  -1}  # FR
+    - {id: 2, x: -0.031, y: 0.008, z:  0.031, dir:  -1}  # BL
+    - {id: 3, x: -0.031, y: 0.008, z: -0.031, dir: 1}  # BR
 controller:
   # These PID gains are for the cascaded controller (QuadDroneController)
   # The Lee controller uses its own gains (Kx, Kv, KR, KOmega) which are hardcoded
@@ -51,9 +44,9 @@ controller:
     pitch: {p: 5.0, i: 0.0, d: 0.0}
 
   rate_gains:
-    roll:  {p: 0.1, i: 0.0, d: 0.05}
-    pitch: {p: 0.1, i: 0.0, d: 0.05}
-    yaw:   {p: 0.1, i: 0.0, d: 0.0}
+    roll:  {p: 0.025, i: 0.0, d: 0.0}
+    pitch: {p: 0.025, i: 0.0, d: 0.0}
+    yaw:   {p: 0.008, i: 0.0, d: 0.0}
 
 camera_parameters:
   Cam_Arm_Length: 0.05
@@ -66,8 +59,10 @@ camera_parameters:
 
 limits:
   max_velocity_xy: 2.0
+  max_velocity_z: 1.0
   max_tilt_angle_deg: 30.0
-  max_angular_rate_deg: 200.0
+  max_angular_rate_RP_deg: 120.0
+  max_angular_rate_Yaw_deg: 90.0
   
   # Python: self.max_thrust = 0.6 N (total from all 4 motors)
   max_thrust_newtons: 0.6
