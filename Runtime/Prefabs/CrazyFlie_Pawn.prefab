@@ -120,7 +120,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.04, z: 0.1}
+  m_Size: {x: 0.1, y: 0.045, z: 0.1}
   m_Center: {x: 0, y: 0.023, z: 0}
 --- !u!1 &5847766064081349904
 GameObject:
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 6925635596373442636}
   - component: {fileID: 2731254988113373828}
   m_Layer: 0
-  m_Name: QuadPawnPrefab
+  m_Name: CrazyFlie_Pawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,6 +480,9 @@ MonoBehaviour:
   - {fileID: 5952494717003119130}
   - {fileID: 7027284009040917118}
   currentControllerKind: 0
+  debugSimLoop: 1
+  debugSimLoopHz: 10
+  debugDisableController: 0
 --- !u!54 &4049279432092915417
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -565,8 +568,8 @@ MonoBehaviour:
     X: 0
     Y: 0
     Z: 0
-    W: 1
-  _mode: 1
+    W: 0
+  _mode: 4
   _lastWriter: 0
   _activeSource: 0
   _lastCommandTimeSec: 0

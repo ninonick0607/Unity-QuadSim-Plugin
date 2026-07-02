@@ -1384,7 +1384,7 @@ GameObject:
   - component: {fileID: 5015867165408226507}
   - component: {fileID: 2748501231768571355}
   m_Layer: 0
-  m_Name: Drone_Parent
+  m_Name: Flightmare_Pawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
