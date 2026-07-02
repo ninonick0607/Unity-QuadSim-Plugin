@@ -23,13 +23,14 @@ propulsion:
   max_thrust: 0.147
   thrust_coef: 0.183
   torque_coef: 0.0244
-  
-  propellers:
-    - {id: 0, x:  0.031, y: 0.0, z:  0.031, dir: -1}  # FL
-    - {id: 1, x:  0.031, y: 0.0, z: -0.031, dir:  1}  # FR
-    - {id: 2, x: -0.031, y: 0.0, z:  0.031, dir:  1}  # BL
-    - {id: 3, x: -0.031, y: 0.0, z: -0.031, dir: -1}  # BR
 
+  # QuadSim canonical order: 0=FL, 1=FR, 2=BL, 3=BR
+  # Unity body: +x forward, +y up, +z left
+  propellers:
+    - {id: 0, x:  0.031, y: 0.02125, z:  0.031, dir: 1}  # FL
+    - {id: 1, x:  0.031, y: 0.02125, z: -0.031, dir:  -1}  # FR
+    - {id: 2, x: -0.031, y: 0.02125, z:  0.031, dir:  -1}  # BL
+    - {id: 3, x: -0.031, y: 0.02125, z: -0.031, dir: 1}  # BR
 controller:
   # These PID gains are for the cascaded controller (QuadDroneController)
   # The Lee controller uses its own gains (Kx, Kv, KR, KOmega) which are hardcoded
@@ -65,10 +66,8 @@ camera_parameters:
 
 limits:
   max_velocity_xy: 2.0
-  max_velocity_z: 1.0
   max_tilt_angle_deg: 30.0
-  max_angular_rate_RP_deg: 200.0
-  max_angular_rate_Yaw_deg: 200.0
+  max_angular_rate_deg: 200.0
   
   # Python: self.max_thrust = 0.6 N (total from all 4 motors)
   max_thrust_newtons: 0.6

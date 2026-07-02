@@ -24,7 +24,7 @@
     {
       "displayName": "Headless Tools",
       "description": "Standalone headless visualization and utility tools such as the live UDP viewer.",
-      "path": "Samples~/Headless-Tools"
+      "path": "Samples~/Headless Tools"
     }
   ]
 }

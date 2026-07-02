@@ -219,7 +219,16 @@ namespace RobotCore
                 latest.MagTimestampSec   = Mag.LastTimestampSec;
                 latest.MagValid          = Mag.IsValid;
             }
-
+            // Altitude log
+            if (logSensors && _logLimiter.ShouldRunAndConsume(nowNanos))
+            {
+                Debug.Log(
+                    $"[Baro] truthAlt={Baro.EstimatedAltitude:F2}m  believedAlt={Baro.PressureAltitude:F2}m  " +
+                    $"P={Baro.LastPressureHPa:F2}hPa  T={Baro.LastTemperature:F1}C  " +
+                    $"| [Mag] |B|={Mag.LastMagField.magnitude:F3}G  decl={Mag.MagneticDeclination:F2}deg  " +
+                    $"hdg={Mag.MagneticHeading:F1}  noise={enableNoise}");
+            }
+            
             Latest = latest;
         }
     }
